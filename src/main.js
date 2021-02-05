@@ -173,7 +173,7 @@ async function init() {
   });
 
   const bod = await new ModelPart(bdy,scene,30)
-  const har = await new ModelPart(hr,scene,30)
+  const har = await new ModelPart(hr,scene,30,4)
   
   await until(()=>{return cnt==8})
   ReactDOM.render(

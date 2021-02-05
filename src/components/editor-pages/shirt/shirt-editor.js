@@ -10,13 +10,8 @@ import Material from "../../material"
 import shirt from "./shirt_default.png";
 import jacket from "./jacket_default.png";
 
-//import ae from "./ae.png";
-import duck from "./duck.png";
-//import gt from "./gt.png"; 
-
-import ieee_black from "./ieee_logo_black.png"; 
-import ieee_red from "./ieee_logo_red.png"; 
-import ieee_white from "./ieee_logo_white.png"; 
+import hei_black from "./heilab_logo_black.png";
+import hei_white from "./heilab_logo_white.png";
 
 const shirtColors = ["#f2f2f2", "#cedded", "#92a1b1", "#3479b7","#7d0c1e","#262525"]
 
@@ -32,13 +27,13 @@ var assets = {
     materials: []
   },
   front: {
-    selected: ieee_white,
-    textures: [ieee_white,ieee_red,ieee_black, duck],
+    selected: hei_white,
+    textures: [hei_white,hei_black],
     materials: []
   },
   back: {
     selected: 'none',
-    textures: [ieee_white,ieee_red,ieee_black, duck],
+    textures: [hei_white,hei_black],
     materials: []
   }
 }
@@ -63,8 +58,6 @@ export default class ShirtEditor extends Component {
         ...assets.back.materials
       ]
 
-      assets.jacket.materials[0].setActive(false);
-      assets.back.materials[0].setActive(false);
 
       this.editorPage = React.createRef();
     }
@@ -97,8 +90,8 @@ export default class ShirtEditor extends Component {
               <Swatches
                 selected={assets.front.selected}
                 textures={assets.front.textures}
-                canDisable={true}
-                canUpload={true}
+                canDisable={false}
+                canUpload={false}
                 material={assets.front.materials}
                 />
             </div>
@@ -107,8 +100,8 @@ export default class ShirtEditor extends Component {
               <Swatches
                 selected={assets.back.selected}
                 textures={assets.back.textures}
-                canDisable={true}
-                canUpload={true}
+                canDisable={false}
+                canUpload={false}
                 material={assets.back.materials}
               />
 

@@ -87,9 +87,9 @@ export default class Editor extends Component{
         const exporter = new GLTFExporter();
         const fullscene = this.props.models[this.bodyType][this.hairType].fullscene;
         var base = this.props.body.exportModel();
-        var hairModel = this.props.hair.exportModel();
+        // var hairModel = this.props.hair.exportModel();
         base.scene.children[0].children[1].name = "Body";
-        base.scene.children[0].children[1].geometry = BufferGeometryUtils.mergeBufferGeometries([base.scene.children[0].children[1].geometry, hairModel.scene.children[0].children[1].geometry],false)
+        // base.scene.children[0].children[1].geometry = BufferGeometryUtils.mergeBufferGeometries([base.scene.children[0].children[1].geometry, hairModel.scene.children[0].children[1].geometry],false)
 
         new THREE.TextureLoader().load(this.getMergedTextureURL(), (tex) => {
             fullscene.scene.traverse(node => {
